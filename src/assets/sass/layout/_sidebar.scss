@@ -10,7 +10,6 @@
 		form {
 			@include icon;
 			position: relative;
-
 			&:before {
 				@include vendor('transform', 'scaleX(-1)');
 				color: _palette(fg);
@@ -46,6 +45,9 @@
 		background-color: _palette(bg-alt);
 		font-size: 0.9em;
 		position: relative;
+		
+		top:0;
+		left: 0;
 		width: _size(sidebar-width);
 
 		h2 {
@@ -56,6 +58,7 @@
 			@include padding($pad, $pad, (0, 0, $pad, 0));
 			position: relative;
 			width: _size(sidebar-width);
+			
 
 			> * {
 				border-bottom: solid 2px _palette(border);
