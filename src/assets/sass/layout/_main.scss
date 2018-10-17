@@ -10,14 +10,14 @@
 		@include vendor('flex-grow', '1');
 		@include vendor('flex-shrink', '1');
 		width: 100%;
-
+		margin-top: 50px;
 		> .inner {
-			@include padding(0, 6em);
+			@include padding(0, 1em);
 			margin: 0 auto;
 			max-width: 110em;
 
 			> section {
-				@include padding(6em, 0);
+				@include padding(1em, 0);
 				border-top: solid 2px _palette(border);
 
 				&:first-of-type {
@@ -28,7 +28,7 @@
 
 		@include breakpoint('<=xlarge') {
 			> .inner {
-				@include padding(0, 5em);
+				@include padding(0, 1em);
 
 				> section {
 					@include padding(5em, 0);
@@ -38,7 +38,7 @@
 
 		@include breakpoint('<=large') {
 			> .inner {
-				@include padding(0, 4em);
+				@include padding(0, 1em);
 
 				> section {
 					@include padding(4em, 0);

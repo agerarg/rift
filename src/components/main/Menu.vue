@@ -1,6 +1,9 @@
 <template>
     	<nav id="menu">
 									<ul>
+						<router-link :to="{name:'Register'}" tag="li" class="mobAuthShow"><a>Registrar</a></router-link>
+						<router-link :to="{name:'Login'}" tag="li" class="mobAuthShow"><a>Ingresar</a></router-link>
+
 										<router-link :to="{name: 'Default'}" tag="li"><a>Homepage</a></router-link>
 										<router-link :to="{name: 'Generic'}" tag="li"><a >Generic</a></router-link>
 									<router-link :to="{name: 'Elements'}" tag="li"><a >Elements</a></router-link>
@@ -31,10 +34,14 @@
 								</nav>
 </template>
 <style lang="scss" scoped>
-#menu{ 
-	position: fixed; 
-	width:  _size(sidebar-width);
-	background-color: green;
+.mobAuthShow{ 
+	display: none;
 }
+@media only screen and (max-width: 600px) {
+               .mobAuthShow{
+                     display: block;
+              }
+        }  
+
 </style>
 

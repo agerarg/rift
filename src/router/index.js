@@ -4,6 +4,9 @@ import Elements from '@/components/view/Elements.vue'
 import Default from '@/components/view/Default.vue'
 import Generic from '@/components/view/Generic.vue'
 
+import Login from '@/components/view/Auth/Login.vue';
+import Register from '@/components/view/Auth/Register.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +25,16 @@ export default new Router({
       path: '/generic',
       name: 'Generic',
       component: Generic
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
