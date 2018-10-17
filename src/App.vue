@@ -21,19 +21,19 @@
 					</div>
 				
 			</div>
-				<appMainChats />
+				<appMainChatOnScreen />
    </div>
 </template>
 
 <script>
 import appMainMenu from './components/main/Menu.vue';
 import appMainNavBar from './components/main/NavBar.vue';
-import appMainChats from './components/main/Chats.vue';
+import appMainChatOnScreen from './components/main/Chats/ChatOnScreen.vue';
 export default {
  components: {
    appMainMenu,
 	 appMainNavBar,
-	 appMainChats
+	 appMainChatOnScreen
  },
  data(){
    return {
