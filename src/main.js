@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Vuelidate from 'vuelidate';
 import VueResource from 'vue-resource';
+import { store } from './store/store';
 Vue.config.productionTip = false
 
 Vue.use(VueResource);
@@ -23,6 +24,7 @@ Vue.use(Vuelidate);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

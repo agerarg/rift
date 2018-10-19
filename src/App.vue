@@ -1,54 +1,54 @@
 <template>
-  <div id="app">
-<div id="wrapper">
-<appMainNavBar @toggleSideBar="sidebarActive=!sidebarActive" />
-<div id="main">
-	
-						<div id="scroll-content" class="inner">
-							<transition name="nextPageAnim" mode="out-in">
-								<router-view></router-view>
-							</transition>
-						</div>
-					</div>
-
-					<div id="sidebar" :class="{'inactive':sidebarActive}">
-						<div class="inner">
-            
-							<appMainMenu />
-                
-						</div>
-            
-					</div>
-				
-			</div>
-				<appMainChatOnScreen />
-   </div>
+  <div id="app" >
+		<appMainTopBar :isMakingPost="isWritingMsg" />
+		<div id="Container" class="Container">
+			<appMainContentLeft />
+			<router-view></router-view>
+			<appMainContentRight v-if="allowRightContent" />
+		</div>
+		<div @click="isWritingStop" :class="{imNotThefather:isWritingMsg}"></div>
+		<span id="textSizeFix"></span>
+  </div>
 </template>
 
 <script>
-import appMainMenu from './components/main/Menu.vue';
-import appMainNavBar from './components/main/NavBar.vue';
-import appMainChatOnScreen from './components/main/Chats/ChatOnScreen.vue';
+import appMainTopBar from './components/main/TopBar.vue';
+import appMainContentLeft from './components/main/ContentLeft.vue';
+import appMainContentRight from './components/main/ContentRight.vue';
+
 export default {
- components: {
-   appMainMenu,
-	 appMainNavBar,
-	 appMainChatOnScreen
- },
- data(){
-   return {
-     sidebarActive: false
-   }
- },
- methods:{
-   
- }
+	components: {
+	appMainTopBar,
+	appMainContentLeft,
+	appMainContentRight
+	},
+	methods:{
+		isWritingStop(){
+			this.$store.state.isWritingMsg=false;
+			return false;
+		},
+		loadMorePosts(){
+			
+		}
+	},
+	computed:{
+		isWritingMsg(){
+			return this.$store.state.isWritingMsg;
+		},
+		allowRightContent(){
+			return this.$store.state.allowRightContent;
+		}
+	}
 }
 </script>
-
 <style lang="scss">
+@import 'assets/sass/main.scss';
 
-@import "assets/sass/main.scss";
+#textSizeFix{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	}
 
 .nextPageAnim-enter-active{
 	animation: nextPEnter 1s ease-out forwards;

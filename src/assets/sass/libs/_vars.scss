@@ -1,14 +1,3 @@
-// Misc.
-	$misc: (
-		z-index-base:		10000
-	);
-
-// Duration.
-	$duration: (
-		nav:				0.5s,
-		transition:			0.2s
-	);
-
 // Size.
 	$size: (
 		border-radius:		0.375em,
@@ -42,13 +31,11 @@
 		border-bg:			transparentize(#e6ebed, 0.75),
 		accent:				#f56a6a
 	);*/
+	$codeColor: (
+		dark:	#365899,
+		
+	);
 	$palette: (
-		bg:					#DCDCDD,
-		bg-alt:				#C5C3C6,
-		fg:					#4C5C68,
-		fg-bold:			#46494C,
-		fg-light:			#457B9D,
-		border:				rgba(#457B9D,0.75),
-		border-bg:			transparentize(#1D3557, 0.75),
-		accent:				#1985A1
+		dark-link:	codeColor(dark)
+		
 	);

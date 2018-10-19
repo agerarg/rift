@@ -1,0 +1,11 @@
+.normal-link{
+    font-size: 14px;
+    :link,:visited{
+        color: #4267B2;
+        font-size: 14px;
+        text-decoration: none;
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}

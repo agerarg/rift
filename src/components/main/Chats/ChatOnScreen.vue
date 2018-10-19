@@ -16,14 +16,14 @@ export default {
         }
     },
     mounted(){
-        for(let i=1;i<5;i++)
+        /*for(let i=1;i<5;i++)
         {
             this.chats.push({
                 order: i,
                 speakTo: 'juancito',
                 chatText: 'blah blah'
             });
-        }
+        }*/
     }
 }
 </script>

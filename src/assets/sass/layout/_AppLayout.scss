@@ -1,0 +1,36 @@
+.Container {
+    display: flex;
+    height: 100%;
+    padding-top: 50px;
+    position: relative;
+    width: 1000px;
+    backface-visibility: hidden;
+	will-change: overflow;
+	margin-left: auto;
+    margin-right: auto;
+}
+.Left,
+.Middle,
+.Right {
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.Left::-webkit-scrollbar,
+.Middle::-webkit-scrollbar,
+.Right::-webkit-scrollbar {
+    display: none;
+}
+.Left {
+	width: 200px;
+}
+.Middle {
+	flex: 1;
+	width: 500px;
+}
+.Right {
+    width: 310px;
+	
+}
