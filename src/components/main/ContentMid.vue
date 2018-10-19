@@ -1,6 +1,6 @@
 <template>
   <div class="Middle">
-	 			 <appCreate />
+	 			 <appCreate @newShare="myShare" />
 				<appPost v-for="post in posts" :postData="post" :key="post.id" />
   </div>	
 </template>
@@ -37,6 +37,16 @@ export default {
 		window.removeEventListener("scroll", this.handleScroll);
 	},
 	methods:{
+		myShare(text){
+			this.postId++; 
+				this.posts.unshift({
+					id: this.postId,
+					name: 'Agustin',
+					group: 'Awesome Group',
+					text: text
+				});
+			
+		},
 		loadMorePosts(){
 			for(let i=0;i<5;i++)
 			{
@@ -50,9 +60,7 @@ export default {
 			}
 		},
 		handleScroll(sc){
-			this.$store.state.isWritingMsg=false;
 			this.scrollIndex=window.pageYOffset;
-			console.log(this.scrollIndex);
 			if(this.scrollIndex>(1500*this.$store.state.loadDataPack) && !this.triggerLoadPosts.load)
 			{
 				this.$store.state.loadDataPack++;
@@ -60,13 +68,12 @@ export default {
 			}
 		},
 		 makingPostStop(){
-            this.$store.state.isWritingMsg=false;
 			return false;
         }
 	},
 	computed:{
         isMakingPost(){
-            return this.$store.state.isWritingMsg;
+            return this.$store.getters.isWriting;
         }
 	}
 }

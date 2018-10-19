@@ -24,7 +24,7 @@ export default {
 	},
 	methods:{
 		isWritingStop(){
-			this.$store.state.isWritingMsg=false;
+			this.$store.dispatch('isNotWriting');
 			return false;
 		},
 		loadMorePosts(){
@@ -33,7 +33,7 @@ export default {
 	},
 	computed:{
 		isWritingMsg(){
-			return this.$store.state.isWritingMsg;
+			return this.$store.getters.isWriting;
 		},
 		allowRightContent(){
 			return this.$store.state.allowRightContent;

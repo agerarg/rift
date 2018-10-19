@@ -2,6 +2,16 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.main-option-icons{
+  padding-right: 5px;
+  padding-left: 5px;
+  opacity: .5;
+  cursor: pointer;
+  font-size: 20px;
+  &:hover{
+    opacity: 1;
+  }
+}
 .fixTopIndex{
    z-index: 12;
 }
@@ -101,7 +111,15 @@
   }
 
 }
-
+.right-option-icons{
+  float: left;
+  width: 120px;
+  height: 25px;
+   text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 2px;
+    text-align: center;
+}
 .right-option{
   float: left;
   width: 100px;
@@ -110,14 +128,24 @@
     white-space: nowrap;
     border-radius: 2px;
     cursor: pointer;
-    border-left: #3B5CA0 1px solid;
+    border-right: #3B5CA0 1px solid;
     text-align: center;
+}
+.box-option-icons{
+  width: 100%;
+  padding-top: 5px;
+  padding-left: 5px;
+   text-overflow: ellipsis;
+    white-space: nowrap;
+  text-align: center;
 }
 .box-option{
   width: 100%;
   padding-top: 5px;
   padding-left: 5px;
+  font-size: 12px;
   color: white;
+  font-weight: bold;
    text-overflow: ellipsis;
     white-space: nowrap;
   text-align: center;
@@ -135,7 +163,9 @@
   float: left;
   padding-top: 5px;
   padding-left: 5px;
+  font-size: 12px;
   color: white;
+  font-weight: bold;
    text-overflow: ellipsis;
     white-space: nowrap;
 }

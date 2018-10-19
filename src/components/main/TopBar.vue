@@ -69,11 +69,20 @@
             <div class="user-name nofkinwrap">Agustin</div>
           </div>
           <div class="right-option nofkinwrap">
-              <div class="box-option nofkinwrap">Start</div>
+              <div @click="start" class="box-option nofkinwrap">Start</div>
           </div>
            <div class="right-option nofkinwrap">
              <div class="box-option nofkinwrap">Create</div>
           </div>
+           <div class="right-option-icons nofkinwrap">
+             <div class="box-option-icons nofkinwrap">
+               <i class="fas fa-user-friends main-option-icons"></i> 
+               <i class="fas fa-comment main-option-icons"></i>
+                <i class="fas fa-bell main-option-icons"></i>
+                <i class="fas fa-sign-out-alt main-option-icons"></i>
+              </div>
+          </div>
+          
         </div> 
 	</div>
 </template>
@@ -84,6 +93,11 @@ export default {
     return{
       showHistory:false,
       search:""
+    }
+  },
+  methods:{
+    start(){
+       window.scrollTo(-200, 0);
     }
   }
   

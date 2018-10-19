@@ -19,5 +19,15 @@
             </div>
 </template>
 <style lang="scss" scoped>
-
+.profile-name{
+			font-weight: bold;
+			:link, :visited{
+				font-size: 12px;
+				color: #365899;
+				text-decoration: none;
+				&:hover{
+					text-decoration:underline;
+				}
+			}
+	}
 </style>

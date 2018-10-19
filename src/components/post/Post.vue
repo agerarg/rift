@@ -6,12 +6,12 @@
 								<img src="@/assets/images/pic01.jpg" width="40" height="40" />
 							</div>
 							<div class="boxPostHead-profile">
-								<div class="profile-name profile-big"><a href="#">Juan Perez</a> <i class="fas fa-caret-right"></i> <a href="#">Some Group</a>  </div>
+								<div class="profile-name profile-big"><a href="#">{{ postData.name }}</a> <i class="fas fa-caret-right"></i> <a href="#">{{ postData.group  }}</a>  </div>
 								<div class="profile-time"> 25 Min</div>
 							</div>
 						</div>	
 							<div class="text-content">
-										#Offtopic aparte de goblin slayer vi que hubo mucha gente quejandose cuando violaban a las mujeres ahi y la muerte que les daban, no imagino si algun dia animaran gantz, lo cual dudo pero si se hace, adios compañiia que lo hizo xD
+									{{ postData.text  }}
 							</div>
 							<div class="data-content">
 									<div class="data-content-likes">Likes: 3</div>
@@ -58,6 +58,7 @@
 <script>
 import appPostComment from './MyComment.vue';
 export default {
+	props: ['postData'],
     data(){
         return{
             comments:[]
@@ -195,6 +196,7 @@ export default {
 			font-weight: bold;
 			:link, :visited{
 				color: #365899;
+				font-size: 16px;
 				text-decoration: none;
 				&:hover{
 					text-decoration:underline;
