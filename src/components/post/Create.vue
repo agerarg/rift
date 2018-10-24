@@ -40,6 +40,7 @@ export default {
 <style lang="scss" scoped>
 	#shareContent{
 		z-index: 11;
+		max-width: 500px;
 		position: relative;
 	}
 </style>

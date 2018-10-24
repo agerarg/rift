@@ -5,6 +5,8 @@
             </div>
             <div class="form-comment">
                 <textarea 
+                :ref="'comment_'+postId"
+                :id="'comment_'+postId"
                 v-model="commentText" 
                 :rows="rowLines" 
                 cols="46" 
@@ -22,6 +24,7 @@
 </template>
 <script>
 export default {
+    props: ['postId'],
     data(){
         return{
             commentText:"",

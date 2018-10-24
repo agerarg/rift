@@ -66,6 +66,19 @@ export default {
 				this.$store.state.loadDataPack++;
 				this.loadMorePosts();
 			}
+			//Handle de right content set to fixed when reach the scroll limit.
+			var h = document.getElementById('fixedRight').clientHeight;
+			var vph=  window.innerHeight;
+			if(window.pageYOffset>(h-vph-100))
+			{
+				document.getElementById('fixedRight').style.position = "fixed";
+				document.getElementById('fixedRight').style.marginTop = "-"+(h-(vph-100))+"px";
+			}
+			else
+			{
+				document.getElementById('fixedRight').style.position = "relative";
+				document.getElementById('fixedRight').style.marginTop = "0px";
+			}
 		},
 		 makingPostStop(){
 			return false;

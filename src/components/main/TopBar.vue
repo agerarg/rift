@@ -3,7 +3,7 @@
 			<div class="top-left">
 				<div class="top-logo"><i class="fas fa-robot"></i> BOTs</div>
 				 <div class="search">
-            <input type="text" @blur="showHistory=false" @click="showHistory=true" v-model="search" class="searchTerm" placeholder="Search">
+            <input id="searchMaster" type="text" @blur="showHistory=false" @click="showHistory=true" v-model="search" class="searchTerm" placeholder="Search">
             <div class="searchButton">
                 <i class="fa fa-search"></i>
             </div>
@@ -64,15 +64,15 @@
         </div>
 				</div>
 			<div class="top-right nofkinwrap">
-          <div class="right-option nofkinwrap">
+          <div @click="perfil" class="right-option nofkinwrap">
             <div class="user-photo nofkinwrap"><img src="@/assets/images/pic01.jpg" width="25" height="25" /></div>
             <div class="user-name nofkinwrap">Agustin</div>
           </div>
           <div class="right-option nofkinwrap">
-              <div @click="start" class="box-option nofkinwrap">Start</div>
+              <div @click="start" class="box-option nofkinwrap">Home</div>
           </div>
            <div class="right-option nofkinwrap">
-             <div class="box-option nofkinwrap">Create</div>
+             <div  class="box-option nofkinwrap">Create</div>
           </div>
            <div class="right-option-icons nofkinwrap">
              <div class="box-option-icons nofkinwrap">
@@ -98,6 +98,10 @@ export default {
   methods:{
     start(){
        window.scrollTo(-200, 0);
+        this.$router.push( {name: "Home"} );
+    },
+    perfil(){
+      this.$router.push( {name: "Profile"} );
     }
   }
   

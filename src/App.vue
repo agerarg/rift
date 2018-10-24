@@ -2,9 +2,15 @@
   <div id="app" >
 		<appMainTopBar :isMakingPost="isWritingMsg" />
 		<div id="Container" class="Container">
-			<appMainContentLeft />
-			<router-view></router-view>
-			<appMainContentRight v-if="allowRightContent" />
+			<transition  name="routerAnim" mode="out-in">
+				<router-view name="left"></router-view>
+			</transition>
+			<transition  name="routerAnim" mode="out-in">
+				<router-view name="mid"></router-view>
+			</transition>
+			<transition  name="routerAnim" mode="out-in">
+				<router-view name="right"></router-view>
+			</transition>
 		</div>
 		<div @click="isWritingStop" :class="{imNotThefather:isWritingMsg}"></div>
 		<span id="textSizeFix"></span>
@@ -13,14 +19,10 @@
 
 <script>
 import appMainTopBar from './components/main/TopBar.vue';
-import appMainContentLeft from './components/main/ContentLeft.vue';
-import appMainContentRight from './components/main/ContentRight.vue';
 
 export default {
 	components: {
-	appMainTopBar,
-	appMainContentLeft,
-	appMainContentRight
+	appMainTopBar
 	},
 	methods:{
 		isWritingStop(){
@@ -50,32 +52,34 @@ export default {
 	left: 0px;
 	}
 
-.nextPageAnim-enter-active{
-	animation: nextPEnter 1s ease-out forwards;
+.routerAnim-enter-active{
+	 position: relative;
+	animation: nextPEnter .5s ease-out forwards;
 }
-.nextPageAnim-leave-active{
-		animation: nextPLeave 1s ease-out forwards;
+.routerAnim-leave-active{
+	 position: relative;
+		animation: nextPLeave .5s ease-out forwards;
 }
 
 @keyframes nextPEnter {
 	0%{
 				opacity: 0;
-				transform: translateX(-50%);
+				transform: rotateY(90deg);
 	}
 	100%{
 				opacity: 1;
-				transform: translateX(0);
+				transform: rotateY(0);
 
 	}
 }
 @keyframes nextPLeave {
 	0%{
 				opacity: 1;
-					transform: translateX(0);
+					transform: rotateY(90deg);
 	}
 	100%{
 				opacity: 0;
-				transform: translateX(-50%);
+				transform: rotateY(0);
 	}
 }
 
